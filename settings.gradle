@@ -28,6 +28,7 @@ pluginManagement {
             name = 'Quilt'
             url = 'https://maven.quiltmc.org/repository/release'
         }
+
         gradlePluginPortal()
         mavenLocal()
     }

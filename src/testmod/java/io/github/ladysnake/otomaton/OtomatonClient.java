@@ -24,12 +24,13 @@ import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
-import org.quiltmc.loader.api.ModContainer;
-import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
+//import org.quiltmc.loader.api.ModContainer;
+//import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
+import net.fabricmc.api.ClientModInitializer;
 
 public class OtomatonClient implements ClientModInitializer {
     @Override
-    public void onInitializeClient(ModContainer mod) {
+    public void onInitializeClient() {
         FakePlayers.registerClientFactory(Otomaton.FAKE_PLAYER, FakeClientPlayerEntity::new);
         // shh, it's fine
         @SuppressWarnings("unchecked") EntityType<? extends AbstractClientPlayerEntity> fakePlayerType = (EntityType<? extends AbstractClientPlayerEntity>) (EntityType<? extends PlayerEntity>) Otomaton.FAKE_PLAYER;

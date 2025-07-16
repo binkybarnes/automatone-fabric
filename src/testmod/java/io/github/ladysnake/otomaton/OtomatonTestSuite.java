@@ -43,11 +43,12 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
-import org.quiltmc.qsl.testing.api.game.QuiltGameTest;
+//import org.quiltmc.qsl.testing.api.game.QuiltGameTest;
+import net.fabricmc.fabric.api.gametest.v1.FabricGameTest;
 
 import java.util.List;
 
-public class OtomatonTestSuite implements QuiltGameTest {
+public class OtomatonTestSuite implements FabricGameTest {
     @BeforeBatch(batchId = "sleepingBatch")
     public void beforeSleepingTests(ServerWorld world) {
         world.setTimeOfDay(20000);

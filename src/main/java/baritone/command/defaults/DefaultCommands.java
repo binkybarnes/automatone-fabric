@@ -45,7 +45,8 @@ import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Pair;
-import org.quiltmc.qsl.command.api.CommandRegistrationCallback;
+//import org.quiltmc.qsl.command.api.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 import java.util.ArrayList;
 import java.util.Arrays;
