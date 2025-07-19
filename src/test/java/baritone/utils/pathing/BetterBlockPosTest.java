@@ -73,7 +73,7 @@ public class BetterBlockPosTest {
             assertEquals(pos.east(i), better.east(i));
             assertEquals(pos.west(i), better.west(i));
         }
-        assertTrue(better.offset((Direction)null, 0) == better);
+        assertTrue(better.offset((Direction) null, 0) == better);
     }
 
     public void benchOne() {

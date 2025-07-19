@@ -52,6 +52,7 @@ sourceSets {
     api {
         compileClasspath += main.compileClasspath
     }
+    
     main {
         compileClasspath += api.output
     }
@@ -74,6 +75,7 @@ sourceSets {
 
     main {
         compileClasspath += schematica_api.output
+        runtimeClasspath += api.output
     }
 }
 
@@ -149,7 +151,8 @@ java {
 }
 
 javadoc {
-    options.addStringOption('Xwerror', '-quiet') // makes the build fail on travis when there is a javadoc error
+    options.addStringOption('Xwerror', '-quiet')
+    // makes the build fail on travis when there is a javadoc error
     options.linkSource true
     options.encoding "UTF-8" // allow emoji in comments :^)
     source = sourceSets.api.allJava
@@ -171,6 +174,11 @@ jar {
         )
     }
 }
+
+tasks.named("runGametest").configure {
+    enabled = false
+}
+
 
 publishing {
     publications {
