@@ -52,7 +52,7 @@ sourceSets {
     api {
         compileClasspath += main.compileClasspath
     }
-    
+
     main {
         compileClasspath += api.output
     }
@@ -76,6 +76,13 @@ sourceSets {
     main {
         compileClasspath += schematica_api.output
         runtimeClasspath += api.output
+    }
+}
+sourceSets {
+    main {
+        java {
+            srcDir 'src/api/java'
+        }
     }
 }
 
@@ -160,7 +167,7 @@ javadoc {
 }
 
 jar {
-    from sourceSets.launch.output, sourceSets.api.output
+    from sourceSets.launch.output//, sourceSets.api.output
 
     preserveFileTimestamps = false
     reproducibleFileOrder = true
