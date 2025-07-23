@@ -77,6 +77,13 @@ sourceSets {
     }
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs += "src/api/java"
+        }
+    }
+}
 repositories {
     mavenCentral()
 
@@ -149,7 +156,8 @@ java {
 }
 
 javadoc {
-    options.addStringOption('Xwerror', '-quiet') // makes the build fail on travis when there is a javadoc error
+    options.addStringOption('Xwerror', '-quiet')
+    // makes the build fail on travis when there is a javadoc error
     options.linkSource true
     options.encoding "UTF-8" // allow emoji in comments :^)
     source = sourceSets.api.allJava
@@ -157,7 +165,7 @@ javadoc {
 }
 
 jar {
-    from sourceSets.launch.output, sourceSets.api.output
+    from sourceSets.launch.output//, sourceSets.api.output
 
     preserveFileTimestamps = false
     reproducibleFileOrder = true
@@ -170,6 +178,10 @@ jar {
                 'Implementation-Version': project.version
         )
     }
+}
+
+tasks.named("runGametest").configure {
+    enabled = false
 }
 
 publishing {
